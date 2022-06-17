@@ -1,0 +1,9 @@
+1 Classe Articolo;
+
+1 Classe Autore;implementa 1 interfaccia Scrittore
+1 Classe Tags;
+
+2 SottoClassi:ArticoloFantasy e ArticoloNoir
+
+
+1 Classe Blog; implementa 1 Interfaccia BlogImpl
