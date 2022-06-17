@@ -20,7 +20,7 @@ public class Main {
 		Articolo artNoir=new ArticoloNoir("Chi ha ucciso l'uomo Ragno", new Date(), "Il famigerato Detective Conan cerca l'assassino dell'uomo ragno", Daniele, tagFavola);
 		Articolo newArt=Daniele.scriviArticolo("Tre galline sul como'", new Date(),"Favola", "Tre galline viaggiavano alla velocita'della luce sul como'", tagFavola);
 				
-		Blog mondadoriBlog=new Blog(new Articolo[] {art1,art2,artFantasy,artNoir,newArt});
+		Blog mondadoriBlog=new Blog(new Articolo[] {});
 		
 		sceltaStampa(mondadoriBlog);
 	}
@@ -41,20 +41,30 @@ public class Main {
 	}
 	
 	static void stampaTutto(Blog blog) {
-		blog.stampaArticoli();
+		if(blog.getArtsInMem().length>0) {
+			blog.stampaArticoli();
+		}
+		else {
+			System.out.println("Non ci sono articoli");
+		}
 	}
 	
 	static void stampaPerId(Blog blog) {
-		System.out.println("==================LISTA ARTICOLI===================");
-		for(int i=0;i<blog.getArtsInMem().length;i++) {
-			System.out.println("\n"+blog.getArtsInMem()[i].getTitolo()+" | id:"+blog.getArtsInMem()[i].getId());
+		if(blog.getArtsInMem().length>0) {
+			System.out.println("==================LISTA ARTICOLI===================");
+			for(int i=0;i<blog.getArtsInMem().length;i++) {
+				System.out.println("\n"+blog.getArtsInMem()[i].getTitolo()+" | id:"+blog.getArtsInMem()[i].getId());
+			}
+			System.out.println("===================================================");
+			System.out.println("scegli l'id di quale articolo stampare dalla lista qui sopra");
+			
+			Scanner sc=new Scanner(System.in);
+			int numero=Integer.parseInt(sc.nextLine());
+			blog.stampaArticoloPerId(numero);
 		}
-		System.out.println("===================================================");
-		System.out.println("scegli l'id di quale articolo stampare dalla lista qui sopra");
-		
-		Scanner sc=new Scanner(System.in);
-		int numero=Integer.parseInt(sc.nextLine());
-		blog.stampaArticoloPerId(numero);
+		else {
+			System.out.println("Non ci sono articoli");
+		}
 	}
 
 }
