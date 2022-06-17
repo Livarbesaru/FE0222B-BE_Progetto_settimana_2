@@ -20,7 +20,7 @@ public class Main {
 		Articolo artNoir=new ArticoloNoir("Chi ha ucciso l'uomo Ragno", new Date(), "Il famigerato Detective Conan cerca l'assassino dell'uomo ragno", Daniele, tagFavola);
 		Articolo newArt=Daniele.scriviArticolo("Tre galline sul como'", new Date(),"Favola", "Tre galline viaggiavano alla velocita'della luce sul como'", tagFavola);
 				
-		Blog mondadoriBlog=new Blog(new Articolo[] {});
+		Blog mondadoriBlog=new Blog(new Articolo[] {art1,art2,artFantasy,artNoir,newArt});
 		
 		sceltaStampa(mondadoriBlog);
 	}
