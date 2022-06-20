@@ -24,9 +24,10 @@ public class Blog implements BlogImpl{
 
 	@Override
 	public void stampaArticoloPerId(int id) {
-		Articolo artScelto=null;
+		String artScelto=null;
 		for(int i=0;i<this.getArtsInMem().length;i++) {
 			if(this.getArtsInMem()[i].getId()==id) {
+				artScelto=this.getArtsInMem()[i].toString();
 				System.out.println(this.getArtsInMem()[i].toString());
 			}
 		}
